@@ -10,14 +10,18 @@
 $ npm install --dev @dicether/eslint-config
 ```
 
-**Edit `package.json`**:
+**Edit `eslint.config.mjs`**:
 
-```jsonc
-{
+```ts
   // ...
-    "extends": [
-        "@dicether/eslint-config",
-    ]
-}
+import dicetherEsLint from "@dicether/eslint-config";
+import {config} from "typescript-eslint";
+
+export default config(
+    dicetherEsLint,
+    {
+        //...
+    }
+);
 ```
 
